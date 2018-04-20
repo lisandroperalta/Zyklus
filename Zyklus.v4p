@@ -93,7 +93,7 @@
    <LINK srcnodeid="9" srcpinname="Render State Out" dstnodeid="1" dstpinname="Render State">
    </LINK>
    <NODE systemname="ASPECTRATIO (TRANSFORM)" nodename="AspectRatio (Transform)" componentmode="Hidden" id="37">
-   <BOUNDS type="Node" left="6123" top="13716" width="100" height="100">
+   <BOUNDS type="Node" left="4503" top="13746" width="3075" height="270">
    </BOUNDS>
    <PIN pinname="Aspect Height" visible="1" slicecount="1" values="1080">
    </PIN>
@@ -878,12 +878,12 @@
    </LINK>
    <LINK srcnodeid="2" srcpinname="Actual Backbuffer Width" dstnodeid="37" dstpinname="Aspect Width">
    </LINK>
-   <LINK srcnodeid="37" srcpinname="Transform Out" dstnodeid="2" dstpinname="Aspect Ratio">
-   <LINKPOINT x="6717" y="14457">
+   <LINK srcnodeid="37" srcpinname="Transform Out" dstnodeid="2" dstpinname="Aspect Ratio" linkstyle="Bezier">
+   <LINKPOINT x="5503" y="14479">
    </LINKPOINT>
-   <LINKPOINT x="8439" y="13074">
+   <LINKPOINT x="7627" y="13088">
    </LINKPOINT>
-   <LINKPOINT x="7137" y="12423">
+   <LINKPOINT x="6731" y="12431">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="102" srcpinname="Input Value" dstnodeid="2" dstpinname="Fullscreen">

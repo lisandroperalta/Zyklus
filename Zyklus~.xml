@@ -819,7 +819,7 @@
    </PIN>
    </NODE>
    <NODE systemname="S (Value)" nodename="S (Value)" componentmode="Hidden" id="103">
-   <BOUNDS type="Node" left="23655" top="10245" width="100" height="100">
+   <BOUNDS type="Node" left="23625" top="10620" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input Value" visible="1" slicecount="1" values="0">
    </PIN>
@@ -958,7 +958,7 @@
    </LINK>
    <LINK srcnodeid="107" srcpinname="Y Output Value" dstnodeid="106" dstpinname="Input Value">
    </LINK>
-   <NODE systemname="transformacion" filename="transformacion.v4p" nodename="transformacion.v4p" componentmode="Hidden" id="109">
+   <NODE systemname="transformacion" filename="transformacion.v4p" nodename="transformacion.v4p" componentmode="InAWindow" id="109">
    <BOUNDS type="Node" left="2070" top="6630" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
