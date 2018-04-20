@@ -12,6 +12,48 @@
    <PIN pinname="Resolution X" slicecount="1" values="5">
    </PIN>
    </NODE>
+   <NODE systemname="RENDERER (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="2">
+   <BOUNDS type="Node" left="615" top="13188" width="6252" height="276">
+   </BOUNDS>
+   <BOUNDS type="Box" left="615" top="13188" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="40365" top="3600" width="14145" height="8160">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="View" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D24S8">
+   </PIN>
+   <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="D32F_LOCKABLE">
+   </PIN>
+   <PIN pinname="Clear Depth Buffer" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Presentation Interval" slicecount="1" values="default">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Windowed Backbuffer Format" slicecount="1" values="A2R10G10B10">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Ratio" visible="1">
+   </PIN>
+   <PIN pinname="Auto Aspect Ratio" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="EX9 Out" visible="1">
+   </PIN>
+   <PIN pinname="Backbuffer Height" slicecount="1" values="1080">
+   </PIN>
+   <PIN pinname="Backbuffer Width" slicecount="1" values="1920">
+   </PIN>
+   <PIN pinname="Fullscreen" slicecount="1" values="0" visible="1">
+   </PIN>
+   </NODE>
    <NODE systemname="Blend (EX9.RenderState)" nodename="Blend (EX9.RenderState)" componentmode="Hidden" id="9">
    <BOUNDS type="Node" left="627" top="6048" width="100" height="100">
    </BOUNDS>
@@ -32,6 +74,10 @@
    <PIN pinname="Initial FOV" slicecount="1" values="0.14">
    </PIN>
    </NODE>
+   <LINK srcnodeid="8" srcpinname="View" dstnodeid="2" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Projection" dstnodeid="2" dstpinname="Projection">
+   </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="30" systemname="IOBox (String)">
    <BOUNDS type="Box" left="4887" top="612" width="4140" height="240">
    </BOUNDS>
@@ -90,20 +136,34 @@
    <PIN pinname="Specular Color" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
    </PIN>
    </NODE>
+   <LINK srcnodeid="1" srcpinname="Layer" dstnodeid="2" dstpinname="Layers">
+   </LINK>
    <LINK srcnodeid="9" srcpinname="Render State Out" dstnodeid="1" dstpinname="Render State">
    </LINK>
    <NODE systemname="ASPECTRATIO (TRANSFORM)" nodename="AspectRatio (Transform)" componentmode="Hidden" id="37">
    <BOUNDS type="Node" left="6123" top="13716" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Aspect Height" visible="1" slicecount="1" values="1080">
+   <PIN pinname="Aspect Height" visible="1">
    </PIN>
-   <PIN pinname="Aspect Width" visible="1" slicecount="1" values="1920">
+   <PIN pinname="Aspect Width" visible="1">
    </PIN>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
    <PIN pinname="Alignment" slicecount="1" values="FitHeight">
    </PIN>
    </NODE>
+   <LINK srcnodeid="2" srcpinname="Actual Backbuffer Height" dstnodeid="37" dstpinname="Aspect Height">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Actual Backbuffer Width" dstnodeid="37" dstpinname="Aspect Width">
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Transform Out" dstnodeid="2" dstpinname="Aspect Ratio">
+   <LINKPOINT x="6717" y="14457">
+   </LINKPOINT>
+   <LINKPOINT x="8439" y="13074">
+   </LINKPOINT>
+   <LINKPOINT x="7137" y="12423">
+   </LINKPOINT>
+   </LINK>
    <NODE systemname="Info (EX9.Texture)" nodename="Info (EX9.Texture)" componentmode="Hidden" id="38">
    <BOUNDS type="Node" left="2259" top="1623" width="1956" height="276">
    </BOUNDS>
@@ -154,7 +214,7 @@
    <PIN pinname="Increase Timing Precision" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <NODE systemname="analisisDeSonido" filename="analisisDeSonido.v4p" nodename="analisisDeSonido.v4p" componentmode="Hidden" id="75">
+   <NODE systemname="analisisDeSonido" filename="analisisDeSonido.v4p" nodename="analisisDeSonido.v4p" componentmode="InAWindow" id="75">
    <BOUNDS type="Node" left="10716" top="2280" width="0" height="0">
    </BOUNDS>
    <BOUNDS type="Box" left="7401" top="0" width="6630" height="10140">
@@ -258,12 +318,12 @@
    <PIN pinname="Size" slicecount="1" values="10">
    </PIN>
    </NODE>
-   <NODE systemname="Zyklus-1" filename="Zyklus-1.v4p" nodename="Zyklus-1.v4p" componentmode="Hidden" id="95">
+   <NODE systemname="Zyklus-1" filename="Zyklus-1.v4p" nodename="Zyklus-1.v4p" componentmode="InAWindow" id="95">
    <BOUNDS type="Node" left="2222" top="7189" width="0" height="0">
    </BOUNDS>
    <BOUNDS type="Box" left="-34" top="4219" width="4513" height="5941">
    </BOUNDS>
-   <BOUNDS type="Window" left="2835" top="3165" width="20325" height="11220">
+   <BOUNDS type="Window" left="11760" top="3000" width="15270" height="8895">
    </BOUNDS>
    <PIN pinname="Transform In" visible="1">
    </PIN>
@@ -277,7 +337,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="25005" top="6285" width="945" height="240">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" pintype="Input" visible="1" values="UpOnly">
+   <PIN pinname="Input Enum" slicecount="1" pintype="Input" visible="1" values="Press">
    </PIN>
    <BOUNDS type="Window" left="0" top="0" width="0" height="0">
    </BOUNDS>
@@ -819,151 +879,23 @@
    <LINK srcnodeid="89" srcpinname="R" dstnodeid="101" dstpinname="Y Input Value">
    </LINK>
    <NODE systemname="R (Value)" nodename="R (Value)" componentmode="Hidden" id="102">
-   <BOUNDS type="Node" left="3690" top="12420" width="100" height="100">
+   <BOUNDS type="Node" left="11250" top="11580" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input Value" visible="1">
    </PIN>
-   <PIN pinname="Receive String" slicecount="1" values="Fullscren">
+   <PIN pinname="Receive String" slicecount="1" values="F">
    </PIN>
    </NODE>
    <NODE systemname="S (Value)" nodename="S (Value)" componentmode="Hidden" id="103">
-   <BOUNDS type="Node" left="18615" top="10185" width="100" height="100">
+   <BOUNDS type="Node" left="18510" top="9765" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input Value" visible="1" slicecount="1" values="0">
+   <PIN pinname="Input Value" visible="1">
    </PIN>
-   <PIN pinname="Send String" slicecount="1" values="Fullscren">
+   <PIN pinname="Send String" slicecount="1" values="F">
    </PIN>
    </NODE>
-   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="2">
-   <BOUNDS type="Node" left="615" top="13188" width="6252" height="276">
-   </BOUNDS>
-   <BOUNDS type="Box" left="615" top="13188" width="2400" height="1800">
-   </BOUNDS>
-   <BOUNDS type="Window" left="41685" top="1740" width="14145" height="8160">
-   </BOUNDS>
-   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="View" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D24S8">
-   </PIN>
-   <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="D32F_LOCKABLE">
-   </PIN>
-   <PIN pinname="Clear Depth Buffer" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Presentation Interval" slicecount="1" values="default">
-   </PIN>
-   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Windowed Backbuffer Format" slicecount="1" values="A2R10G10B10">
-   </PIN>
-   <PIN pinname="Actual Backbuffer Height" visible="1">
-   </PIN>
-   <PIN pinname="Actual Backbuffer Width" visible="1">
-   </PIN>
-   <PIN pinname="Aspect Ratio" visible="1">
-   </PIN>
-   <PIN pinname="Auto Aspect Ratio" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="EX9 Out" visible="1">
-   </PIN>
-   <PIN pinname="Backbuffer Height" slicecount="1" values="1080">
-   </PIN>
-   <PIN pinname="Backbuffer Width" slicecount="1" values="1920">
-   </PIN>
-   <PIN pinname="Fullscreen" slicecount="1" visible="1" values="0">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="8" srcpinname="View" dstnodeid="2" dstpinname="View">
-   </LINK>
-   <LINK srcnodeid="8" srcpinname="Projection" dstnodeid="2" dstpinname="Projection">
-   </LINK>
-   <LINK srcnodeid="1" srcpinname="Layer" dstnodeid="2" dstpinname="Layers">
-   </LINK>
-   <LINK srcnodeid="2" srcpinname="Actual Backbuffer Height" dstnodeid="37" dstpinname="Aspect Height">
-   </LINK>
-   <LINK srcnodeid="2" srcpinname="Actual Backbuffer Width" dstnodeid="37" dstpinname="Aspect Width">
-   </LINK>
-   <LINK srcnodeid="37" srcpinname="Transform Out" dstnodeid="2" dstpinname="Aspect Ratio">
-   <LINKPOINT x="6717" y="14457">
-   </LINKPOINT>
-   <LINKPOINT x="8439" y="13074">
-   </LINKPOINT>
-   <LINKPOINT x="7137" y="12423">
-   </LINKPOINT>
+   <LINK srcnodeid="100" srcpinname="Y Output Value" dstnodeid="103" dstpinname="Input Value">
    </LINK>
    <LINK srcnodeid="102" srcpinname="Input Value" dstnodeid="2" dstpinname="Fullscreen">
-   </LINK>
-   <NODE systemname="Toggle (Animation)" nodename="Toggle (Animation)" componentmode="Hidden" id="104">
-   <BOUNDS type="Node" left="18585" top="9240" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="Reset" slicecount="1" values="0">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="100" srcpinname="Y Output Value" dstnodeid="104" dstpinname="Input">
-   </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="105">
-   <BOUNDS type="Box" left="18585" top="9540" width="480" height="480">
-   </BOUNDS>
-   <BOUNDS type="Node" left="18585" top="9540" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Boolean">
-   </PIN>
-   <PIN pinname="Behavior" slicecount="1" values="Toggle">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="104" srcpinname="Output" dstnodeid="105" dstpinname="Y Input Value">
-   </LINK>
-   <NODE systemname="S (Value)" nodename="S (Value)" componentmode="Hidden" id="106">
-   <BOUNDS type="Node" left="17310" top="10080" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input Value" visible="1" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Send String" slicecount="1" values="Rotate">
-   </PIN>
-   </NODE>
-   <NODE systemname="Toggle (Animation)" nodename="Toggle (Animation)" componentmode="Hidden" id="108">
-   <BOUNDS type="Node" left="17670" top="9180" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="Reset" slicecount="1" values="0">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="107">
-   <BOUNDS type="Box" left="17670" top="9480" width="480" height="480">
-   </BOUNDS>
-   <BOUNDS type="Node" left="17670" top="9480" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Boolean">
-   </PIN>
-   <PIN pinname="Behavior" slicecount="1" values="Toggle">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="108" srcpinname="Output" dstnodeid="107" dstpinname="Y Input Value">
-   </LINK>
-   <LINK srcnodeid="101" srcpinname="Y Output Value" dstnodeid="108" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="107" srcpinname="Y Output Value" dstnodeid="106" dstpinname="Input Value">
    </LINK>
    </PATCH>
