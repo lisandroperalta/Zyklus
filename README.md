@@ -15,6 +15,6 @@ Dependencias:
 
 TO-DO
 <br>
-<br>OSD
 <br>
-<br> CORREGIR LA RELACION DE ASPECTO DE LAS IMAGENES CARGADAS
+<br>El menu de ayuda podria estar mejor
+<br>
