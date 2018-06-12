@@ -275,15 +275,15 @@
    </PIN>
    </NODE>
    <NODE systemname="keyboardManager" filename="keyboardManager.v4p" nodename="keyboardManager.v4p" componentmode="Hidden" id="144">
-   <BOUNDS type="Node" left="9210" top="568" width="0" height="0">
+   <BOUNDS type="Node" left="9210" top="570" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="2508" top="255" width="13405" height="7480">
+   <BOUNDS type="Box" left="9210" top="570" width="13405" height="7480">
    </BOUNDS>
    <BOUNDS type="Window" left="4485" top="3255" width="17820" height="7470">
    </BOUNDS>
    </NODE>
    <NODE id="-6" nodename="MainLoop (VVVV)" systemname="MAINLOOP (VVVV)">
-   <BOUNDS height="0" left="6660" top="570" type="Node" width="0">
+   <BOUNDS height="0" left="6735" top="570" type="Node" width="0">
    </BOUNDS>
    <PIN pinname="Maximum Background FPS" slicecount="1" values="120">
    </PIN>
