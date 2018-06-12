@@ -245,9 +245,9 @@
    </PIN>
    </NODE>
    <NODE systemname="osd" filename="osd.v4p" nodename="osd.v4p" componentmode="Hidden" id="143">
-   <BOUNDS type="Node" left="5723" top="8915" width="0" height="0">
+   <BOUNDS type="Node" left="5798" top="8615" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="1531" top="3705" width="8385" height="10420">
+   <BOUNDS type="Box" left="1606" top="3405" width="8385" height="10420">
    </BOUNDS>
    <BOUNDS type="Window" left="10200" top="2385" width="14145" height="10410">
    </BOUNDS>
@@ -275,12 +275,14 @@
    </PIN>
    </NODE>
    <NODE systemname="keyboardManager" filename="keyboardManager.v4p" nodename="keyboardManager.v4p" componentmode="Hidden" id="144">
-   <BOUNDS type="Node" left="9210" top="570" width="0" height="0">
+   <BOUNDS type="Node" left="9495" top="525" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="9210" top="570" width="13405" height="7480">
+   <BOUNDS type="Box" left="9495" top="525" width="13405" height="7480">
    </BOUNDS>
    <BOUNDS type="Window" left="4485" top="3255" width="17820" height="7470">
    </BOUNDS>
+   <PIN pinname="Evaluate" visible="1" pintype="Input" slicecount="1" values="1">
+   </PIN>
    </NODE>
    <NODE id="-6" nodename="MainLoop (VVVV)" systemname="MAINLOOP (VVVV)">
    <BOUNDS height="0" left="6735" top="570" type="Node" width="0">
@@ -335,5 +337,25 @@
    <LINK srcnodeid="102" srcpinname="Input Value" dstnodeid="150" dstpinname="Fullscreen">
    </LINK>
    <LINK srcnodeid="135" srcpinname="Layer" dstnodeid="150" dstpinname="Layers">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="151">
+   <BOUNDS type="Box" left="8745" top="360" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="8745" top="360" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Evaluate">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="151" srcpinname="Y Output Value" dstnodeid="144" dstpinname="Evaluate">
    </LINK>
    </PATCH>
